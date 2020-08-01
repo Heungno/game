@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>스도쿠🎮</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script defer src="js/sudoku.js"></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="title">
+      <h1><label>🎮</label>스도쿠</h1>
+      <h2><label>⏳</label> <span>시간</span></h2>
+    </div>
+    
+    <div class="game">
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="0"  data-a="0" data-x="0" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="1"  data-a="0" data-x="1" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="2"  data-a="0" data-x="2" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="3"  data-a="0" data-x="0" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="4"  data-a="0" data-x="1" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="5"  data-a="0" data-x="2" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="6"  data-a="0" data-x="0" data-y="2"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="7"  data-a="0" data-x="1" data-y="2"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="8"  data-a="0" data-x="2" data-y="2"/></div>
+      </div>
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="0"  data-a="1" data-x="3" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="1"  data-a="1" data-x="4" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="2"  data-a="1" data-x="5" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="3"  data-a="1" data-x="3" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="4"  data-a="1" data-x="4" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="5"  data-a="1" data-x="5" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="6"  data-a="1" data-x="3" data-y="2"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="7"  data-a="1" data-x="4" data-y="2"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="8"  data-a="1" data-x="5" data-y="2"/></div>
+      </div>
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="0"  data-a="2" data-x="6" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="1"  data-a="2" data-x="7" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="2"  data-a="2" data-x="8" data-y="0"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="3"  data-a="2" data-x="6" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="4"  data-a="2" data-x="7" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="5"  data-a="2" data-x="8" data-y="1"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="6"  data-a="2" data-x="6" data-y="2"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="7"  data-a="2" data-x="7" data-y="2"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id="8"  data-a="2" data-x="8" data-y="2"/></div>
+      </div>
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="0" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="1" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="2" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="0" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="1" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="2" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="0" data-y="5"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="1" data-y="5"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="3" data-x="2" data-y="5"/></div>
+      </div>
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="3" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="4" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="5" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="3" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="4" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="5" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="3" data-y="5"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="4" data-y="5"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="4" data-x="5" data-y="5"/></div>
+      </div>
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="6" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="7" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="8" data-y="3"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="6" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="7" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="8" data-y="4"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="6" data-y="5"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="7" data-y="5"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="5" data-x="8" data-y="5"/></div>
+      </div>
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="0" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="1" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="2" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="0" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="1" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="2" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="0" data-y="8"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="1" data-y="8"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="6" data-x="2" data-y="8"/></div>
+      </div>
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="3" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="4" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="5" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="3" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="4" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="5" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="3" data-y="8"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="4" data-y="8"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="7" data-x="5" data-y="8"/></div>
+      </div>
+      <div class="squares">
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="6" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="7" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="8" data-y="6"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="6" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="7" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="8" data-y="7"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="6" data-y="8"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="7" data-y="8"/></div>
+        <div class="cell"><input type="number" class="value" min="1" max="9" data-id=""  data-a="8" data-x="8" data-y="8"/></div>
+      </div>
+    </div>
+  </body>
+</html>
