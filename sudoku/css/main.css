@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Jua);
+
 :root {
   --squares-width: 100vw;
   --squares-height: 100vh;
@@ -19,6 +21,11 @@ body {
   background-color: var(--color-background);
   /* width: var(--squares-width); */
   /* height: var(--squares-height); */
+
+}
+
+* {
+  font-family: "Jua", sans-serif;
 }
 
 .title {
