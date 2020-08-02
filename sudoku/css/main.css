@@ -2,15 +2,17 @@
   --squares-width: 100vw;
   --squares-height: 100vh;
   --color-border: #2C3E50;
-  --color-background:#2C3E50;
-  --color-squares1: #AEB6BF ;
-  --color-squares2:#D5D8DC;
+  --color-background: #2C3E50;
+  --color-square1: #AEB6BF;
+  --color-square2: #D5D8DC;
   --color-font: #2C3E50;
   --color-success: #28B463;
   --color-wrong: #BA4A00;
   --color-focus: #F4D03F;
   --color-focus1: #F7DC6F;
   --color-focus2: #F7DC6F;
+  --size-geid-4: 2;
+  --size-geid-9: 3;
 }
 
 body {
@@ -29,29 +31,41 @@ body {
 
 .game {
   height: var(--squares-width);
-
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  /* padding: 20px; */
 }
 
-.squares {
+.game_4 {
+  grid-template-columns: repeat(var(--size-geid-4), auto)
+}
+
+.game_9 {
+  grid-template-columns: repeat(var(--size-geid-9), auto)
+}
+
+.square {
   /* font-size: 30px; */
   text-align: center;
   /* padding: 20px; */
-  border:solid 1.5px var(--color-border);
+  border: solid 1.5px var(--color-border);
 
   display: grid;
-  grid-template-columns: repeat(3, auto);
   /* padding: 20px; */
 }
 
-.squares:nth-child(even) {
-  background-color: var(--color-squares1);
+.square_4 {
+  grid-template-columns: repeat(var(--size-geid-4), auto)
 }
 
-.squares:nth-child(odd) {
-  background-color: var(--color-squares2);
+.square_9 {
+  grid-template-columns: repeat(var(--size-geid-9), auto)
+}
+
+.square:nth-child(even) {
+  background-color: var(--color-square1);
+}
+
+.square:nth-child(odd) {
+  background-color: var(--color-square2);
 }
 
 .cell {
@@ -61,8 +75,8 @@ body {
   border: solid 1px var(--color-border);
 }
 
-.cell > input {
-  border:solid 0 transparent;
+.cell>input {
+  border: solid 0 transparent;
   background-color: transparent;
   height: 100%;
   width: 100%;
@@ -72,13 +86,12 @@ body {
   transition: background-color 0.2s ease-in-out;
 }
 
-.cell > input:focus {
+.cell>input:focus {
   background-color: var(--color-focus);
   opacity: .9;
 }
 
-.cell > .focus {
+.cell>.focus {
   background-color: var(--color-focus1);
   opacity: .5;
 }
-
