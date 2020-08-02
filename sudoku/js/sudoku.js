@@ -65,7 +65,7 @@ class sudoku {
     let game = this.createElement('div', [
       { key: 'class', value: `game game_${this.size}` },
     ]);
-
+    let count = 0;
     for (let j = 0; j < this.size; j++) {
       let square = this.createElement('div', [
         { key: 'class', value: `square square_${this.size}` },
@@ -75,7 +75,7 @@ class sudoku {
         let value = this.createElement('input', [
           { key: 'type', value: 'number' },
           { key: 'class', value: 'value' },
-          // { key: 'value', value: (i + 1) * (j + 1) },
+          { key: 'data-id', value: count++ },
           { key: 'data-a', value: j },
           { key: 'data-x', value: parseInt(i / 3) + parseInt(j / 3) * 3 },
           { key: 'data-y', value: parseInt(i % 3) + parseInt(j % 3) * 3 },
@@ -97,16 +97,35 @@ class sudoku {
       .then((json) => {
         json.squares.map((item) => {
           // console.log(item.x, item.y, item.value);
-          document.querySelector(
+          const target = document.querySelector(
             `.value[data-x="${item.x}"][data-y="${item.y}"]`
-          ).value = item.value;
+          );
+          target.value = item.value;
+          target.setAttribute('readonly', 'readonly');
         });
       })
       .catch((err) => console.log(err));
   }
 
-  answerCheck(answer) {
-    // arr = new Array(answer);
+  // 입력값 검증
+  static answerCheck(answers) {
+    let arr = new Array();
+    let result = true;
+    answers.forEach((answer, index) => {
+      answer.classList.remove('wrong');
+      arr.push(answer.value);
+    });
+
+    answers.forEach((answer, index) => {
+      // console.log(answer.value, arr[index].value);
+      // console.log(arr[index], arr.indexOf(answer.value));
+      if (arr.filter((value) => value === answer.value).length > 1) {
+        answer.classList.add('wrong');
+        result = false;
+      }
+    });
+
+    return result;
   }
 
   setEvent() {
@@ -115,7 +134,7 @@ class sudoku {
 
     valueElementer.forEach(function (element) {
       element.addEventListener(['change'], (event) => {
-        if (element.value < 0 || element.value > 9) {
+        if (element.value < 1 || element.value > 9) {
           element.value = '';
           return;
         }
@@ -123,19 +142,21 @@ class sudoku {
           `.value[data-a="${element.dataset.a}"]`
         );
         let checkX = document.querySelectorAll(
-          `.value[data-a="${element.dataset.x}"]`
+          `.value[data-x="${element.dataset.x}"]`
         );
         let checkY = document.querySelectorAll(
-          `.value[data-a="${element.dataset.y}"]`
+          `.value[data-y="${element.dataset.y}"]`
         );
 
-        let answer = new Array();
-
-        checkA.forEach((v) => {
-          if (v.value) answer.push(v.value);
-        });
-
-        console.log(answer);
+        sudoku.answerCheck(
+          Array.prototype.slice.call(checkA).filter((element) => element.value)
+        );
+        sudoku.answerCheck(
+          Array.prototype.slice.call(checkX).filter((element) => element.value)
+        );
+        sudoku.answerCheck(
+          Array.prototype.slice.call(checkY).filter((element) => element.value)
+        );
       });
 
       element.addEventListener('focus', (event) => {

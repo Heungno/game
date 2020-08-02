@@ -102,3 +102,8 @@ body {
   background-color: var(--color-focus1);
   opacity: .5;
 }
+
+
+.cell>input.wrong {
+  color: var(--color-wrong);
+}
