@@ -128,48 +128,50 @@ class sudoku {
     return result;
   }
 
+  static answerListener(element) {
+    if (element.value < 1 || element.value > 9) {
+      element.value = '';
+      return;
+    }
+    let checkA = document.querySelectorAll(
+      `.value[data-a="${element.dataset.a}"]`
+    );
+    let checkX = document.querySelectorAll(
+      `.value[data-x="${element.dataset.x}"]`
+    );
+    let checkY = document.querySelectorAll(
+      `.value[data-y="${element.dataset.y}"]`
+    );
+
+    const resultA = sudoku.answerCheck(
+      Array.prototype.slice.call(checkA).filter((element) => element.value)
+    );
+    const resultX = sudoku.answerCheck(
+      Array.prototype.slice.call(checkX).filter((element) => element.value)
+    );
+    const resultY = sudoku.answerCheck(
+      Array.prototype.slice.call(checkY).filter((element) => element.value)
+    );
+
+    if (resultA && resultX && resultY) {
+      element.classList.remove('wrong');
+    } else {
+      element.classList.add('wrong');
+    }
+  }
+
   setEvent() {
     const sudokuElementer = document.querySelector('.game');
     const valueElementer = sudokuElementer.querySelectorAll('.value');
 
     valueElementer.forEach(function (element) {
-      element.addEventListener(['change'], (event) => {
-        if (element.value < 1 || element.value > 9) {
-          element.value = '';
-          return;
-        }
-        let checkA = document.querySelectorAll(
-          `.value[data-a="${element.dataset.a}"]`
-        );
-        let checkX = document.querySelectorAll(
-          `.value[data-x="${element.dataset.x}"]`
-        );
-        let checkY = document.querySelectorAll(
-          `.value[data-y="${element.dataset.y}"]`
-        );
+      element.addEventListener('change', (event) =>
+        sudoku.answerListener(element)
+      );
 
-        const resultA = sudoku.answerCheck(
-          Array.prototype.slice.call(checkA).filter((element) => element.value)
-        );
-        const resultX = sudoku.answerCheck(
-          Array.prototype.slice.call(checkX).filter((element) => element.value)
-        );
-        const resultY = sudoku.answerCheck(
-          Array.prototype.slice.call(checkY).filter((element) => element.value)
-        );
-        document.querySelector(
-          '#testheung'
-        ).innerText = `resultA=${resultA} resultX=${resultX} resultY=${resultY} result=${
-          resultA && resultX && resultY
-        }`;
-        if (resultA && resultX && resultY) {
-          element.classList.reomve('wrong');
-          console.log(true, element);
-        } else {
-          element.classList.add('wrong');
-          console.log(false, element);
-        }
-      });
+      element.addEventListener('keyup', (event) =>
+        sudoku.answerListener(element)
+      );
 
       element.addEventListener('focus', (event) => {
         let target_a = element.dataset.a;
