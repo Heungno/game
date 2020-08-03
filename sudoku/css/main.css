@@ -3,16 +3,17 @@
 :root {
   --squares-width: 100vw;
   --squares-height: 100vh;
-  --color-border: #2C3E50;
-  --color-background: #2C3E50;
-  --color-square1: #AEB6BF;
-  --color-square2: #D5D8DC;
-  --color-font: #2C3E50;
-  --color-success: #28B463;
-  --color-wrong: #BA4A00;
-  --color-focus: #F4D03F;
-  --color-focus1: #F7DC6F;
-  --color-focus2: #F7DC6F;
+  --color-border: #2c3e50;
+  --color-background: #2c3e50;
+  --color-square1: #aeb6bf;
+  --color-square2: #d5d8dc;
+  --color-font: #2c3e50;
+  --color-success: #28b463;
+  --color-wrong: #ba4a00;
+  --color-focus: #f4d03f;
+  --color-focus1: #f7dc6f;
+  --color-focus2: #f7dc6f;
+  --color-readonly: rgb(21, 32, 95);
   --size-geid-4: 2;
   --size-geid-9: 3;
 }
@@ -21,11 +22,10 @@ body {
   background-color: var(--color-background);
   /* width: var(--squares-width); */
   /* height: var(--squares-height); */
-
 }
 
 * {
-  font-family: "Jua", sans-serif;
+  font-family: 'Jua', sans-serif;
 }
 
 .title {
@@ -42,11 +42,11 @@ body {
 }
 
 .game_4 {
-  grid-template-columns: repeat(var(--size-geid-4), auto)
+  grid-template-columns: repeat(var(--size-geid-4), auto);
 }
 
 .game_9 {
-  grid-template-columns: repeat(var(--size-geid-9), auto)
+  grid-template-columns: repeat(var(--size-geid-9), auto);
 }
 
 .square {
@@ -60,11 +60,11 @@ body {
 }
 
 .square_4 {
-  grid-template-columns: repeat(var(--size-geid-4), auto)
+  grid-template-columns: repeat(var(--size-geid-4), auto);
 }
 
 .square_9 {
-  grid-template-columns: repeat(var(--size-geid-9), auto)
+  grid-template-columns: repeat(var(--size-geid-9), auto);
 }
 
 .square:nth-child(even) {
@@ -82,28 +82,31 @@ body {
   border: solid 1px var(--color-border);
 }
 
-.cell>input {
+.cell > input {
   border: solid 0 transparent;
   background-color: transparent;
   height: 100%;
   width: 100%;
   text-align: center;
-  color: var(--color-font);
+  color: blue;
   font-size: 200%;
   transition: background-color 0.5s ease-in-out;
 }
 
-.cell>input:focus {
+.cell > input:read-only {
+  color: var(--color-font);
+}
+
+.cell > input:focus {
   background-color: var(--color-focus);
-  opacity: .9;
+  opacity: 0.9;
 }
 
-.cell>.focus {
+.cell > .focus {
   background-color: var(--color-focus1);
-  opacity: .5;
+  opacity: 0.5;
 }
 
-
-.cell>input.wrong {
+.cell > input.wrong {
   color: var(--color-wrong);
 }

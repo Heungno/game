@@ -112,16 +112,16 @@ class sudoku {
     let arr = new Array();
     let result = true;
     answers.forEach((answer, index) => {
-      answer.classList.remove('wrong');
+      // answer.classList.remove('wrong');
       arr.push(answer.value);
     });
 
     answers.forEach((answer, index) => {
-      // console.log(answer.value, arr[index].value);
-      // console.log(arr[index], arr.indexOf(answer.value));
       if (arr.filter((value) => value === answer.value).length > 1) {
-        answer.classList.add('wrong');
-        result = false;
+        if (!answer.readOnly) {
+          //answer.classList.add('wrong');
+          result = false;
+        }
       }
     });
 
@@ -148,15 +148,27 @@ class sudoku {
           `.value[data-y="${element.dataset.y}"]`
         );
 
-        sudoku.answerCheck(
+        const resultA = sudoku.answerCheck(
           Array.prototype.slice.call(checkA).filter((element) => element.value)
         );
-        sudoku.answerCheck(
+        const resultX = sudoku.answerCheck(
           Array.prototype.slice.call(checkX).filter((element) => element.value)
         );
-        sudoku.answerCheck(
+        const resultY = sudoku.answerCheck(
           Array.prototype.slice.call(checkY).filter((element) => element.value)
         );
+        document.querySelector(
+          '#testheung'
+        ).innerText = `resultA=${resultA} resultX=${resultX} resultY=${resultY} result=${
+          resultA && resultX && resultY
+        }`;
+        if (resultA && resultX && resultY) {
+          element.classList.reomve('wrong');
+          console.log(true, element);
+        } else {
+          element.classList.add('wrong');
+          console.log(false, element);
+        }
       });
 
       element.addEventListener('focus', (event) => {
