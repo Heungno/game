@@ -101,7 +101,7 @@ class sudoku {
             `.value[data-x="${item.x}"][data-y="${item.y}"]`
           );
           target.value = item.value;
-          target.setAttribute('readonly', 'readonly');
+          target.setAttribute('disabled', 'disabled');
         });
       })
       .catch((err) => console.log(err));

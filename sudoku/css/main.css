@@ -93,7 +93,7 @@ body {
   transition: background-color 0.5s ease-in-out;
 }
 
-.cell > input:read-only {
+.cell > input:disabled {
   color: var(--color-font);
 }
 
